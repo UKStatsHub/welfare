@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* GOV.UK Design System Variables */
 :root {
@@ -142,7 +144,7 @@ th {
 
 /* Print styles */
 @media print {
-  .print\\:hidden {
+  .print\:hidden {
     display: none !important;
   }
   

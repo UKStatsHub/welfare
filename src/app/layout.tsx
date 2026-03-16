@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
@@ -7,6 +7,12 @@ const inter = Inter({
   display: 'swap',
   variable: '--font-inter',
 });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#003087',
+};
 
 export const metadata: Metadata = {
   title: 'UK Welfare Statistics | UK Statistics Hub',
@@ -43,11 +49,6 @@ export const metadata: Metadata = {
     title: 'UK Welfare Statistics | UK Statistics Hub',
     description: 'Comprehensive UK welfare statistics compiled from official government sources.',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
-  themeColor: '#003087',
 };
 
 export default function RootLayout({
