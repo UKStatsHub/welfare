@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000 2>&1 | tee dev.log",
-    "build": "next build && touch out/.nojekyll",
+    "build": "next build && node -e \"require('fs').writeFileSync('out/.nojekyll', '')\"",
     "start": "next start",
     "lint": "eslint .",
     "fetch": "bun run scripts/fetch-data.ts",
-    "export": "next build && touch out/.nojekyll"
+    "export": "next build && node -e \"require('fs').writeFileSync('out/.nojekyll', '')\""
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

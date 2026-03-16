@@ -1,12 +1,19 @@
 import type { Metadata, Viewport } from 'next';
+import type { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import './globals.css';
+
+// In some environments (e.g., code editors without Node types installed) the `process` global
+// may not be recognized by TypeScript. Ensure the file still compiles.
+declare const process: { env: { NEXT_PUBLIC_BASE_PATH?: string } };
 
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
 });
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -54,13 +61,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href={`${basePath}/favicon.ico`} sizes="any" />
+        <link rel="apple-touch-icon" href={`${basePath}/apple-touch-icon.png`} />
       </head>
       <body className="min-h-screen flex flex-col bg-white text-gov-grey-900 font-sans antialiased">
         {children}
