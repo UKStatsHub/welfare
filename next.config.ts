@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-// GitHub Pages project site is served at https://<org>.github.io/welfare/
-// Ensure Next generates URLs with the correct base path.
 const basePath = "/welfare";
 
 const nextConfig: NextConfig = {
