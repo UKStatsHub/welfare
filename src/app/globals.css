@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/* GOV.UK Design System Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #0B0C0C;
+  --card: #ffffff;
+  --card-foreground: #0B0C0C;
+  --popover: #ffffff;
+  --popover-foreground: #0B0C0C;
+  --primary: #003087;
+  --primary-foreground: #ffffff;
+  --secondary: #F3F2F1;
+  --secondary-foreground: #0B0C0C;
+  --muted: #F3F2F1;
+  --muted-foreground: #505A5F;
+  --accent: #F3F2F1;
+  --accent-foreground: #0B0C0C;
+  --destructive: #D4351C;
+  --destructive-foreground: #ffffff;
+  --border: #DEE0E2;
+  --input: #DEE0E2;
+  --ring: #003087;
+  --radius: 0px;
+  
+  /* Chart colors */
+  --chart-1: #003087;
+  --chart-2: #00703C;
+  --chart-3: #D4351C;
+  --chart-4: #F47738;
+  --chart-5: #5694CA;
+}
+
+.dark {
+  --background: #0B0C0C;
+  --foreground: #F9F9F9;
+  --card: #1D1F21;
+  --card-foreground: #F9F9F9;
+  --popover: #1D1F21;
+  --popover-foreground: #F9F9F9;
+  --primary: #5694CA;
+  --primary-foreground: #0B0C0C;
+  --secondary: #2A2E31;
+  --secondary-foreground: #F9F9F9;
+  --muted: #2A2E31;
+  --muted-foreground: #B1B4B6;
+  --accent: #2A2E31;
+  --accent-foreground: #F9F9F9;
+  --destructive: #D4351C;
+  --destructive-foreground: #ffffff;
+  --border: #383F43;
+  --input: #383F43;
+  --ring: #5694CA;
+}
+
+/* Base styles */
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GOV.UK Focus styles */
+:focus {
+  outline: 3px solid var(--ring);
+  outline-offset: 0;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #003087;
+}
+
+/* Links */
+a {
+  color: #003087;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:visited {
+  color: #4C2C92;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: 700;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+}
+
+/* Print styles */
+@media print {
+  .print\\:hidden {
+    display: none !important;
+  }
+  
+  body {
+    color: #000;
+    background: #fff;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F2F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B1B4B6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6F777B;
+}
+
+/* Selection */
+::selection {
+  background: #FFDD00;
+  color: #0B0C0C;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
