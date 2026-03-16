@@ -48,6 +48,9 @@ jobs:
       - name: Build static site
         run: bun run build
 
+      - name: Disable Jekyll
+        run: touch out/.nojekyll
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -86,6 +89,9 @@ jobs:
 
       - name: Build static site
         run: bun run build
+
+      - name: Disable Jekyll
+        run: touch out/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
