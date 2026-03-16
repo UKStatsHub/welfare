@@ -1,12 +1,8 @@
 import type { NextConfig } from "next";
 
-declare const process: { env: { NODE_ENV?: string; NEXT_PUBLIC_BASE_PATH?: string } };
-
-// GitHub Pages serves the site from a repository subpath (e.g. /welfare).
-// In production, default to that subpath unless overridden by NEXT_PUBLIC_BASE_PATH.
-const basePath =
-  process.env.NEXT_PUBLIC_BASE_PATH ??
-  (process.env.NODE_ENV === "production" ? "/welfare" : "");
+// GitHub Pages project site is served at https://<org>.github.io/welfare/
+// Ensure Next generates URLs with the correct base path.
+const basePath = "/welfare";
 
 const nextConfig: NextConfig = {
   output: "export",
